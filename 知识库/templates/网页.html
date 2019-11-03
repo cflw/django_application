@@ -1,0 +1,37 @@
+{% load static %}
+{% load 知识库标签 %}
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<link href="{% static '样式.css' %}" rel="stylesheet" type="text/css"/>
+	</head>
+	<body>
+		<div class="W导航">
+			{% for v文档 in va导航 %}
+				/ <a href="/知识库/{{ v文档.m名称 }}">{{ v文档.m标题 }}</a> 
+			{% endfor %}
+		</div>
+		<div class="W文档">
+			<div class="W目录">
+				{% if v上级 %}
+					<p><a href="/知识库/{{ v上级.m名称 }}">←{{ v上级.m标题 }}</a></p>
+				{% endif %}
+				{% for v文档 in va文档0 %}
+					<a href="/知识库/{{ v文档.m名称 }}">{{ v文档.m标题 }}</a><br>
+				{% endfor %}
+				{% if va子文档 %}
+					<ul>
+						{% for v文档 in va子文档 %}
+							<li><a href="/知识库/{{ v文档.m名称 }}">{{ v文档.m标题 }}</a></li>
+						{% endfor %}
+					</ul>
+				{% endif %}
+				{% for v文档 in va文档1 %}
+					<a href="/知识库/{{ v文档.m名称 }}">{{ v文档.m标题 }}</a><br>
+				{% endfor %}
+			</div>
+			<div class="W内容">{{ v内容|safe }}</div>
+		</div>
+	</body>
+</html>
