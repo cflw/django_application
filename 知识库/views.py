@@ -1,7 +1,16 @@
 from django.shortcuts import render
+from django.template import Context, Template
 import 知识库.models as 模型
 import markdown
 # Create your views here.
+c文档头 = """
+{% load static %}
+{% load 知识库标签 %}
+"""
+c上下文 = Context()
+def f渲染文档内容(a内容):
+	v文档模板 = Template(c文档头 + markdown.markdown(a内容))
+	return v文档模板.render(c上下文)
 def f网页(a请求, a名称 = "首页"):
 	v文档 = 模型.C文档表.f找名称(a名称)
 	if v文档:
@@ -23,7 +32,7 @@ def f网页(a请求, a名称 = "首页"):
 		va导航.reverse()
 		v模板变量 = {
 			"va导航": va导航,
-			"v内容" : markdown.markdown(v文档.m内容),
+			"v内容" : f渲染文档内容(v文档.m内容),
 			"v上级": v文档.m上级文档,
 			"va文档0": va文档0,
 			"va子文档": va子文档,
