@@ -14,3 +14,5 @@ class C文章管理(admin.ModelAdmin):
 	list_display = ("m名称", "m标题", "mi目录显示", "m排列位置")
 
 admin.site.register(models.C文档表, C文章管理)
+admin.site.register(models.C文件表)
+admin.site.register(models.C图片表)
