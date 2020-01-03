@@ -121,3 +121,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# 姜戈应用
+媒体*
+静态*
