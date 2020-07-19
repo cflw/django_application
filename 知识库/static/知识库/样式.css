@@ -4,7 +4,7 @@ div {
 	border-width: 1px;
 }
 div.W导航 {
-	width: 100%;
+	width: 90%;
 	padding: 10px;
 }
 div.W目录 {
@@ -18,4 +18,12 @@ div.W内容 {
 	width: 70%;
 	min-width: 450px;
 	float: left;
+}
+div.W内容 code {
+	background-color: lightgray;
+}
+div.W内容 blockquote {
+	background-color: lightgray;
+	margin-left: 0;
+	margin-right: 0;
 }
