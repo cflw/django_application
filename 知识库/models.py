@@ -14,14 +14,13 @@ class C文档表(models.Model):
 	m修改者 = models.IntegerField(default = 0)
 	m修改号 = models.IntegerField(default = 0)
 	m修改时间 = models.TimeField(auto_now = True)
-	m内容 = models.TextField()
 	mi目录显示 = models.BooleanField(default = False)
 	m排列位置 = models.IntegerField(default = 9999)	#同一级别中的位置
 	m上级文档 = models.ForeignKey('self', on_delete = models.SET_NULL, blank = True, null = True)
 	def __str__(self):
 		return self.m名称
 	@staticmethod
-	def f找标识(a标识):
+	def f找标识(a标识):	#查找标识,返回记录
 		if not a标识:
 			return None
 		v找 = C文档表.objects.filter(m标识 = a标识)
@@ -30,7 +29,7 @@ class C文档表(models.Model):
 		else:
 			return None
 	@staticmethod
-	def f找名称(a名称):
+	def f找名称(a名称):	#查找名称,返回记录
 		if not a名称:
 			return None
 		v找 = C文档表.objects.filter(m名称 = a名称)

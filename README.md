@@ -2,9 +2,9 @@
 
 项目依赖项：
 
-* [django](https://github.com/django/django)
+* [Django](https://github.com/django/django)
+* [Pillow](https://github.com/python-pillow/Pillow)
 * [乘风龙王的代码库（Python）](https://github.com/cflw/cflw_py)
-* [markdown](https://github.com/Python-Markdown/markdown)
 
 ## 内容包含
 
